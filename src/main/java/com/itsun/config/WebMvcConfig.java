@@ -3,10 +3,20 @@ package com.itsun.config;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.*;
 
+import javax.annotation.Resource;
+
 
 @Configuration
 @EnableWebMvc
 public class WebMvcConfig extends WebMvcConfigurationSupport {
+
+    @Resource
+    private BaseInterceptor baseInterceptor;
+
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(baseInterceptor);
+    }
 
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
