@@ -1,6 +1,6 @@
 package com.itsun.web.controller;
 
-import com.itsun.domain.User;
+import com.itsun.domain.UserVo;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -10,7 +10,7 @@ public class IndexController {
 
 
     @GetMapping("/login")
-    public String index(User user){
+    public String index(UserVo user){
         return "admin-index";
     }
 
